@@ -31,7 +31,7 @@ public class NotificationConsumer {
             value = @Queue(value = "${ead.broker.queue.notificationCommandQueue.name}", durable = "true"),
             exchange = @Exchange(value = "${ead.broker.exchange.notificationCommandExchange}",
                     type = ExchangeTypes.TOPIC, ignoreDeclarationExceptions = "true"),
-            key = "${ead.broker.notificationCommandKey}")
+            key = "${ead.broker.key.notificationCommandKey}")
     )
     public void listen(@Payload NotificationCommandDto notificationCommandDto) {
         NotificationModel notificationModel = new NotificationModel();
